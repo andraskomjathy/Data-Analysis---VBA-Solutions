@@ -1,47 +1,4 @@
-Attribute VB_Name = "Module3"
-Sub Utolsó_az_oszlopban()
-Dim WS As Worksheet
-Dim LastCell As Range
-Dim LastCellRowNumber As Long
-
-Set WS = Worksheets("Gyakorlo1")
-With WS
-    Set LastCell = .Cells(.Rows.Count, "C").End(xlUp)
-    LastCellRowNumber = LastCell.Row
-    MsgBox "A Valasz: " LastCell.Row
-    LastCell.Row
-End With
-End Sub
-Sub Formázott_oszlopdiagram()
-Attribute Formázott_oszlopdiagram.VB_ProcData.VB_Invoke_Func = " \n14"
-'
-' Formázott_oszlopdiagram Makró
-'
-
-'
-    ActiveSheet.Shapes.AddChart2(201, xlColumnClustered).Select
-    ActiveChart.SetSourceData Source:=Range("Gyakorlo1!$A$1:$C$2")
-    ActiveChart.FullSeriesCollection(1).Select
-    ActiveChart.FullSeriesCollection(1).ApplyDataLabels
-   
-End Sub
-Sub Piros_háttér()
-Attribute Piros_háttér.VB_ProcData.VB_Invoke_Func = " \n14"
-'
-' Piros_háttér Makró
-'
-
-'
-    Range("C4").Select
-    With Selection.Interior
-        .Pattern = xlSolid
-        .PatternColorIndex = xlAutomatic
-        .Color = 255
-        .TintAndShade = 0
-        .PatternTintAndShade = 0
-    End With
-End Sub
-Sub matrix_szinezes()
+Sub matrix_evaluation()
 Dim x As Integer
 Dim y As Integer
 For x = 2 To (Cells(Rows.Count, 1).End(xlUp).Row)
